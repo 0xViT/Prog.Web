@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <p id="display"></p>
+        </div>
+        <div class="buttons">
+            <button class="number" onclick="addInput('7')">7</button>
+            <button class="number" onclick="addInput('8')">8</button>
+            <button class="number" onclick="addInput('9')">9</button>
+            <button class="operator" onclick="addInput('/')">/</button>
+            <button class="number" onclick="addInput('4')">4</button>
+            <button class="number" onclick="addInput('5')">5</button>
+            <button class="number" onclick="addInput('6')">6</button>
+            <button class="operator" onclick="addInput('*')">*</button>
+            <button class="number" onclick="addInput('1')">1</button>
+            <button class="number" onclick="addInput('2')">2</button>
+            <button class="number" onclick="addInput('3')">3</button>
+            <button class="operator" onclick="addInput('-')">-</button>
+            <button class="number" onclick="addInput('0')">0</button>
+            <button class="number" onclick="addInput('.')">.</button>
+            <button class="clear" onclick="clearInput()">C</button>
+            <button class="operator" onclick="addInput('+')">+</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+        function addInput(input) {
+            
+            document.getElementById("display").innerHTML += input;
+        }
+
+        function clearInput() {
+            document.getElementById("display").innerHTML = "";
+        }
+
+        function calculate() {
+            var result = eval(document.getElementById("display").innerHTML);
+            document.getElementById("display").innerHTML = result;
+        }
+
+        function subtract(num1, num2) {
+            return num1 - num2;
+        }
+
+        function multiply(num1, num2) {
+            return num1 * num2;
+        }
+
+        function divide(num1, num2) {
+            if (num2 === 0) {
+                return "Errore: divisione per zero!";
+            }
+            return num1 / num2;
+        }
+    </script>
+</body>
+</html>
